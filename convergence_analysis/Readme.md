@@ -66,5 +66,5 @@ report the initial guess time in seconds.
 |14|	11.2|
 
 
-You can see that the choice of `NGRIDS 6` can be a good choice. Also, one can test it against for different number of processors.
+You can see that the choice of `NGRIDS 6` can be a good choice. Also, one can test it with different number of processors.
 
