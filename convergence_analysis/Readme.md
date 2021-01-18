@@ -13,4 +13,16 @@ number of processors, `n^2`, for CP2K. This is different from the QE which one n
 Fast Fourier Transform (FFT) grid in the `&GLOBAL` section. This will allow you to perform calculations with cutoff values of more than 1500 Ry. This should be along with `NGRIDS` 
 higher than the default value (here we set it to 16). It is set by adding `EXTENDED_FFT_LENGTHS .TRUE.` to the input.
 
-Now, in order
+Now, in order to run the convergence analysis, one needs to run the bash file `conv_anal.sh`. First, it is needed to make the bash file executable by running the command:
+```
+chmod +x conv_anal.sh
+```
+Then one should have loaded the CP2K executable. Note that the extension of the CP2K should be modified in the bash file (we use `.psmp` version). This is done either by `module load` or adding the CP2K executable file to the `PATH` variable. Another way is to create a 
+shortcut of the excutable in this folder. Here are three examples:
+```
+module load cp2k-6.1
+export PATH=/full/path/to/cp2k/executable:$PATH
+ln -s /full/path/to/cp2k/executable 
+```
+
+
