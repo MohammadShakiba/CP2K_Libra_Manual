@@ -16,3 +16,11 @@ optimizer. So, it is recommended that for the geometry or cell optimization to u
 geometry, for the MD you can use lower `EPS_SCF` values like `10E-6.0`. But the more accurate the forces in MD the more accurate the time-overlaps are and therefore the more accurate the nonadiabatic couplings will be. This is up to the user on which `EPS_DEFAULT` value to choose and is totally dependent on the studied system and its computational cost.
 
 
+The target forces and displacement for the geometry or cell optimizations are defined in the `&MOTION` and `&GEO_OPT` section with `MAX_FORCE` and `MAX_DR` keywords 
+respectively. The force value unit is in `Bohr^-1 * Hartree` and the displacement unit is in `Bohr`. When running the geometry optimization, it will print out the coordinates 
+and forces in each step in `*-pos-1.xyz` and `*-frc-1.xyz` files. The last coordinates in the `*-pos-1.xyz` will be the optimized geometry. Also, `*.restart` files are produced
+which if the run is suddenly interrupted, you can change the extension to `.inp` by `mv` command and then run it again. The controls over the production of such files can be 
+done in the [`&PRINT`](https://manual.cp2k.org/trunk/CP2K_INPUT/MOTION/PRINT.html) section of `&MOTION` section. The optimized geometry of the initial structure with a cutoff 
+value of 500 Ry is obtained and uploaded above (`optimized_BA2_PbI4.xyz`). The `BFGS` algorithm is used in the inputs.
+
+It is worth noting that it also possible to perform transition state geometry optimization with CP2K but we do not consider it here.
