@@ -20,3 +20,11 @@ B         0.0000000000         8.9860000610         0.0000000000
 C         0.0000000000         0.0000000000        26.2329998016
 ```
 
+*Note:* You can also use the `cif` file directly in CP2K by setting the name of the `cif` file in `COORD_FILE_NAME` in `&TOPOLOGY` section and change the format to `cif` file by
+changing the `COORD_FILE_FORMAT` to `CIF`. It is also recommended to add this part to your input in the `&TOPOLOGY` section in case you use the raw `cif` file:
+```
+&GENERATE
+   REORDER .TRUE.
+&END GENERATE
+```
+
