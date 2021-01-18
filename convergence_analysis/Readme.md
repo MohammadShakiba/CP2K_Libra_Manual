@@ -18,7 +18,7 @@ Now, in order to run the convergence analysis, one needs to run the bash file `c
 chmod +x conv_anal.sh
 ```
 Then one should have loaded the CP2K executable. Note that the extension of the CP2K should be modified in the bash file (we use `.psmp` version). This is done either by `module load` or adding the CP2K executable file to the `PATH` variable. Another way is to create a 
-shortcut of the excutable in this folder. Here are three examples (you will need to add this to your submit file if you want to run it through `sbatch` or `qsub`):
+shortcut of the excutable in this folder (which is done through `ln -s` command). Here are three examples (you will need to add this to your submit file if you want to run it through `sbatch` or `qsub`):
 ```
 module load cp2k-6.1
 ```
