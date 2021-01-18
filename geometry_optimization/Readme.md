@@ -17,9 +17,12 @@ geometry, for the MD you can use lower `EPS_SCF` values like `10E-6.0`. But the 
 
 
 The target forces and displacement for the geometry or cell optimizations are defined in the `&MOTION` and `&GEO_OPT` section with `MAX_FORCE` and `MAX_DR` keywords 
-respectively. The force value unit is in `Hartree/Bohr` and the displacement unit is in `Bohr`. The maximum force is set to 0.0003 Hartree/Bohr which is almost equivalent to 15 meV/A and the maximum displacement is set to 0.002 Bohr. When running the geometry optimization, it will print out the coordinates 
-and forces in each step in `*-pos-1.xyz` and `*-frc-1.xyz` files. The last coordinates in the `*-pos-1.xyz` will be the optimized geometry. Also, `*.restart` files are produced
-which if the run is suddenly interrupted, you can change the extension to `.inp` by `mv` command and then run it again. The controls over the production of such files can be 
+respectively. The force value unit is in `Hartree/Bohr` and the displacement unit is in `Bohr`. Here, the maximum force is set to 0.0003 Hartree/Bohr which is almost equivalent to 15 meV/A and the maximum displacement is set to 0.002 Bohr. When running the geometry optimization, it will print out the coordinates 
+and forces in each step in `*-pos-1.xyz` and `*-frc-1.xyz` files. The last coordinates in the `*-pos-1.xyz` will be the optimized geometry. Also, `*.restart` files are 
+produced that contain the information of the geometry optimization of the lsat step
+and if the run is suddenly interrupted, you can change the extension to `.inp` by `mv` command and then run it again. This will continue the geometry optimization from the 
+point it was interrupted. In this case, for faster SCF calculations of the first step after interruption, you can add the `WFN_RESTART_FILE_NAME` with the produced `wfn` file to the input and set the
+`SCF_GUESS` to `RESTART`. The controls over the production of such files can be 
 done in the [`&PRINT`](https://manual.cp2k.org/trunk/CP2K_INPUT/MOTION/PRINT.html) section of `&MOTION` section. The optimized geometry of the initial structure with a cutoff 
 value of 500 Ry is obtained and uploaded above (`optimized_BA2_PbI4.xyz`). The `BFGS` algorithm is used for the geometry optimization in the inputs.
 
