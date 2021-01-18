@@ -20,7 +20,7 @@ The procedure adopted here is as follows:
 * TDDFT calculations
 * Molecular dynamics
 * Hybrid functionals
-* The effect of CP2K parameters on the cube file 
+* The effect of CP2K parameters on the cube file (These files are used in [Libra](https://github.com/Quantum-Dynamics-Hub/libra-code) pacakge.)
     * Cube file sizes
     * Molecular orbitals overlap 
     * Molecular orbitals time-overlap
