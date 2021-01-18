@@ -21,7 +21,11 @@ Then one should have loaded the CP2K executable. Note that the extension of the 
 shortcut of the excutable in this folder. Here are three examples:
 ```
 module load cp2k-6.1
+```
+```
 export PATH=/full/path/to/cp2k/executable:$PATH
+```
+```
 ln -s /full/path/to/cp2k/executable 
 ```
 
