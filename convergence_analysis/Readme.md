@@ -32,7 +32,7 @@ ln -s /full/path/to/cp2k/executable
 Now, you can run the bash file using `./conv_anal.sh`. After running the bash file the initial guesses for each cutoff value will be printe out. The results of the convergence analysis for the (BA)2PbI4 are shown.
 
 |Cutoff (Ry)	| Energy | Difference |
-|---|---|---|---|---|
+|---|---|---|
 |50	|-500.4802099|	0|
 |100	|-509.6437594	|9.163549597|
 |200|	-509.9425365	|0.298777066|
