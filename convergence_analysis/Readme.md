@@ -47,4 +47,6 @@ Now, you can run the bash file using `./conv_anal.sh`. After running the bash fi
 |1100|	-509.9390435|	-1.6414E-05|
 |1200|	-509.9390477	|4.1739E-06|
 
+As is shown cutoff value of 500 Ry can be a good choice for other calculations. The convergence for `NGRIDS` and `REL_CUTOFF` can also be obtained the same as above. It is 
+worth noting that the change of `NGRIDS` can also changes the total energy but the difference is negligible. 
 
