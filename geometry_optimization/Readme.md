@@ -11,9 +11,9 @@ and then after obtaining the optimized geometry one can perform the convergence 
 form convergence analysis you can redo the geometry optimization by the new cutoff value. This will not take longer than the previous geometry optimization and will finish sooner. 
 
 Note that the CP2K optimizer works based on the forces for each of the geometry and cell optimization. In fact, the movement of the atoms is based on their computed forces. The 
-lower the convergence criteria of the SCF cycle (`EPS_DEFAULT`) the more accurate the computed forces are. This will lead to a better optimized geometry and will not confuse the 
+lower the convergence criteria of the SCF cycle (`EPS_SCF`) the more accurate the computed forces are. This will lead to a better optimized geometry and will not confuse the 
 optimizer. So, it is recommended that for the geometry or cell optimization to use a good cutoff value and a smaller target accuracy of SCF cycle defined by `EPS_SCF`, like `10E-8.0`. After you obtained the optimized 
-geometry, for the MD you can use lower `EPS_SCF` values like `10E-6.0`. But the more accurate the forces in MD the more accurate the time-overlaps are and therefore the more accurate the nonadiabatic couplings will be. This is up to the user on which `EPS_DEFAULT` value to choose and is totally dependent on the studied system and its computational cost.
+geometry, for the MD you can use lower `EPS_SCF` values like `10E-6.0`. But the more accurate the forces in MD the more accurate the time-overlaps are and therefore the more accurate the nonadiabatic couplings will be. This is up to the user on which `EPS_SCF` value to choose and is totally dependent on the studied system and its computational cost.
 
 
 The target forces and displacement for the geometry or cell optimizations are defined in the `&MOTION` and `&GEO_OPT` section with `MAX_FORCE` and `MAX_DR` keywords 
