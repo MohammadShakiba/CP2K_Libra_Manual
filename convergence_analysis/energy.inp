@@ -15,6 +15,7 @@
      ! Increase the NGRIDS for large cutoff values and large cells
      NGRIDS 14
      CUTOFF 1000
+     REL_CUTOFF 50
     &END MGRID
     &QS
       METHOD GPW
