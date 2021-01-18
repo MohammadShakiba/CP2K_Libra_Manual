@@ -1,8 +1,6 @@
-# CP2K_Libra_Manual
+# CP2K manual for electronic structure calculations
 
-| Tables   |      Are      |  Cool |
-|----------|-------------|------|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
+
+In this repository we have provided the inputs for different types of electronic structure calculations. The same files are aslo available in other places as well (SP_MB, CsPbI3) for use in nonadiabatic dynamics. However, here we provide detailed information on how to use CP2K and how the inputs functionality and timings changes.
+
 
