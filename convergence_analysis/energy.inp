@@ -71,6 +71,7 @@
         NHOMO 3
         NLUMO 3
         ! If the it is set to .TRUE. or T, it will print out the cube files
+        ! In this case it will only print all the HOMO energies and 3 LUMO energies
         WRITE_CUBE F
       &END
       &PDOS
