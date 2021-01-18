@@ -1,4 +1,4 @@
-# Covergence analysis 
+# 1. Covergence analysis 
 
 Here, we perform convergence analysis to obtain an appropriate cutoff value. This is required for other electronic structure calculations. 
 The convergence analysis is performed with different cutoff values and the `SCF_GUESS` is set to `ATOMIC` and the first guess of the total energy is used to check the
@@ -50,4 +50,21 @@ Now, you can run the bash file using `./conv_anal.sh`. After running the bash fi
 As is shown cutoff value of 500 Ry can be a good choice for other calculations. The convergence for `NGRIDS` and `REL_CUTOFF` can also be obtained the same as above by fixing 
 the `CUTOFF 500` in the input. It is also 
 worth noting that the change of `NGRIDS` can also changes the total energy but the difference is negligible. 
+
+# 2. Speed of calculations based on `NGRIDS`
+
+Here we show that how `NGRIDS` can increase the speed of calculations. We have used a cutoff value of 1000 Ry and in the following table we just report the initial guess time
+
+|NGRIDS|	Initial Guess time for 1000 Ry cutoff (seconds)|
+|---|---|
+|2|	1440.8|
+|4|	60.5|
+|6|	10.5|
+|8|	10.5|
+|10|	11.2|
+|12|	11.1|
+|14|	11.2|
+
+
+
 
