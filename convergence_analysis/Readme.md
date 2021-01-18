@@ -18,7 +18,7 @@ Now, in order to run the convergence analysis, one needs to run the bash file `c
 chmod +x conv_anal.sh
 ```
 Then one should have loaded the CP2K executable. Note that the extension of the CP2K should be modified in the bash file (we use `.psmp` version). This is done either by `module load` or adding the CP2K executable file to the `PATH` variable. Another way is to create a 
-shortcut of the excutable in this folder. Here are three examples:
+shortcut of the excutable in this folder. Here are three examples (you will need to add this to your submit file if you want to run it through `sbatch` or `qsub`):
 ```
 module load cp2k-6.1
 ```
@@ -28,5 +28,23 @@ export PATH=/full/path/to/cp2k/executable:$PATH
 ```
 ln -s /full/path/to/cp2k/executable 
 ```
+
+Now, you can run the bash file using `./conv_anal.sh`. After running the bash file the initial guesses for each cutoff value will be printe out. The results of the convergence analysis for the (BA)2PbI4 are shown.
+
+|Cutoff (Ry)	| Energy | Difference |
+|---|---|---|---|---|
+|50	|-500.4802099|	0|
+|100	-509.6437594	9.163549597|
+|200	-509.9425365	0.298777066|
+|300	-509.9392906	-0.00324587|
+|400	-509.9392312	-5.94027E-05|
+|500	-509.9390532	-0.000178071|
+|600	-509.939024	-2.91514E-05|
+|700	-509.9390288	4.8129E-06|
+|800	-509.9390414	1.25423E-05|
+|900	-509.9390572	1.57812E-05|
+|1000	-509.9390599	2.7748E-06|
+|1100	-509.9390435	-1.6414E-05|
+|1200	-509.9390477	4.1739E-06|
 
 
