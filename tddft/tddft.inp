@@ -44,7 +44,7 @@
         METHOD BROYDEN_MIXING
         NBROYDEN 8
       &END MIXING
-      EPS_SCF 1.0E-8
+      EPS_SCF 1.0E-6
       SCF_GUESS RESTART
       MAX_SCF  50
       ADDED_MOS 50
