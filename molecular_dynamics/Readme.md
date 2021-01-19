@@ -31,10 +31,10 @@ from libra_py.CP2K_methods import read_energies_from_cp2k_md_log_file
 
 params = { }
 params["logfile_name"] = 'OUT-BA2PbI4-MD.log' # The log file name
-params["min_band"] = # put the minimum band here
-min_band = params["min_band"]
-params["max_band"] = # put the maximum band here
-max_band = params["max_band"]
+min_band = # put the minimum band here
+max_band = # put the maximum band here
+params["min_band"] = min_band
+params["max_band"] = max_band
 params["spin"] = 1 # which spin energies to read
 params["init_time"] = 50 # the initial time you want
 params["final_time"] = 250 # The final time you need
