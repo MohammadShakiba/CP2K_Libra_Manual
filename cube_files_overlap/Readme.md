@@ -32,4 +32,6 @@ step. Then you can run the calculations for different cutoff values as was menti
 **Note**: In `run.py`, we have can use `os.system("sbatch submit_"+str(njob)+".slm")` which submits the job on CCR. But if one wants to run this file without submitting it can be changed 
 to `os.system("sh submit_"+str(njob)+".slm")`.
 
-
+This can also be done for different `STRIDE` values as well. You can either move the computed overlaps to a new directory and change the `STRIDE` in `cp2k_input_template.inp`, 
+or you can write a new Python code that works based on changing the `STRIDE` keywordusing the above Python code as an example. You can also set this up in two
+for loops as well.
