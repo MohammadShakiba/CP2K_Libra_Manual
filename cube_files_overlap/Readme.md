@@ -33,5 +33,5 @@ step. Then you can run the calculations for different cutoff values as was menti
 to `os.system("sh submit_"+str(njob)+".slm")`.
 
 This can also be done for different `STRIDE` values as well. You can either move the computed overlaps to a new directory and change the `STRIDE` in `cp2k_input_template.inp`, 
-or you can write a new Python code that works based on changing the `STRIDE` keywordusing the above Python code as an example. You can also set this up in two
-for loops as well.
+or you can write a new Python code that works based on changing the `STRIDE` keyword using the above Python code as an example. You can also set this up in two
+for loops, one for `CUTOFF` and one for `STRIDE` as well.
