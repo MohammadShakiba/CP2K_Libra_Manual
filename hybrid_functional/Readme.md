@@ -47,5 +47,22 @@ In hybrid functional calculations, we need to add this part for HSE06 for the `&
 ```
 For hybrid functionals, CP2K uses Auxiliary Density Matrix Method (ADMM). This needs to be added to the `&DFT` section:
 ```
-
+&AUXILIARY_DENSITY_MATRIX_METHOD
+  ! recommended, i.e. use a smaller basis for HFX
+  ! each kind will need an AUX_FIT_BASIS_SET.
+  METHOD BASIS_PROJECTION
+  ! recommended, this method is stable and allows for MD. 
+  ! can be expensive for large systems
+  ADMM_PURIFICATION_METHOD MO_DIAG
+&END
 ```
+Note that the `MO_DIAG` in `ADMM_PURIFICATION_METHOD` is good and stable for MD. In order to do the TD-DFT calculations you need to set this to `NONE`.
+In the `&DFT` section, this part should also be added. The files `BASIS_ADMM` or `BASIS_ADMM_MOLOPT` include the auxiliary basis set for each atom type.
+There is no problem to add multiple `BASIS_SET_FILE_NAME` to the input and the CP2K will concatenate them but one should not add multiple keywords in CP2K like `POTENTIAL_FILE_NAME`.
+```
+BASIS_SET_FILE_NAME BASIS_MOLOPT
+BASIS_SET_FILE_NAME BASIS_ADMM
+BASIS_SET_FILE_NAME BASIS_ADMM_MOLOPT
+POTENTIAL_FILE_NAME GTH_POTENTIALS
+```
+
