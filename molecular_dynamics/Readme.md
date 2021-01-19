@@ -26,8 +26,9 @@ instantly because it has already computed the energies through diagonalization. 
 out the energies. After the energies were printed in the log files, you can plot them using Libra. In order to do so, you will need to run the following command in Python (it is recommended to use the Jupyter notebook):
 ```
 from libra_py.CP2K_methods import read_energies_from_cp2k_log_file
+
 params = { }
-params["logfile_name"] = 'OUT-Total'
+params["logfile_name"] = 'OUT-BA2PbI4-MD.log' # The log file name
 params["min_band"] = # put the minimum band here
 min_band = params["min_band"]
 params["max_band"] = # put the maximum band here
@@ -35,6 +36,8 @@ max_band = params["max_band"]
 params["spin"] = 1 # which spin energies to read
 params["init_time"] = 50 # the initial time you want
 params["final_time"] = 250 # The final time you need
+
+# Read the energies
 energies, tot = read_energies_from_cp2k_log_file(params)
 
 # Now it is needed to 
@@ -42,6 +45,7 @@ energies, tot = read_energies_from_cp2k_log_file(params)
 # %matplotlib notebook
 plt.figure()
 homo_index = # set the HOMO index here
+
 for band in range(0,max_band-min_band+1):
     energy_levels = []
     for time in range(params["init_time"],params["final_time"]):
@@ -53,8 +57,12 @@ for band in range(0,max_band-min_band+1):
         plt.plot(energy_levels, color="red")
     else: # Other states are plotted with black color
         plt.plot(energy_levels, color="black")
+
 plt.xlabel("Time, fs")
 plt.ylabel("Energy, eV")
 plt.title("(BA)$_2$PbI$_4$ energy levels vs time")
-
+plt.savefig('BA2PbI4_energy_levels_vs_time.png', dpi=300)
+plt.close()
 ```
+With this method, you can always check the energies vs time live as the MD goes.
+
