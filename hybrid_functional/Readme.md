@@ -74,6 +74,35 @@ and is defined with `AUX_FIT` after `BASIS_SET`. Here is an example for Pb atom:
   POTENTIAL GTH-PBE-q4
 &END KIND
 ```
-
-
-
+For B3LYP, we need to use `LIBXC` library functionals which is `XC_HYB_GGA_XC_B3LYP`. Here is the `&XC` section for B3LYP:
+```
+    &XC
+      &XC_FUNCTIONAL
+        &LIBXC
+          FUNCTIONAL XC_HYB_GGA_XC_B3LYP
+        &END LIBXC
+      &END XC_FUNCTIONAL
+      &HF
+        &SCREENING
+          EPS_SCHWARZ 1.0E-10
+        &END
+        !&MEMORY
+        ! This is the maximum memory for each processor in MBi, I just comment it but
+        ! you can obtain it through computing the memory you ask in the slurm file
+        ! divided by the number of processors.
+        !  MAX_MEMORY  10000
+        !  EPS_STORAGE_SCALING 0.1
+        !&END MEMORY
+        FRACTION 0.20
+      &END
+    &END XC
+```
+In the `&KIND` section we need to add `BLYP` potentials from `GTH_POTENTIALS`. Here is the example for Pb atom:
+```
+&KIND Pb
+  BASIS_SET DZVP-MOLOPT-SR-GTH
+  BASIS_SET AUX_FIT cFIT6
+  POTENTIAL GTH-BLYP-q4
+&END KIND
+```
+Note that for TD-DFT we need to 
