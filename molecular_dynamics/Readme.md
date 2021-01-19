@@ -23,7 +23,7 @@ plt.close()
 It is highly recommended to plot the energy levels vs time as well. In order to do this, you need to add the `&MO_CUBE` section without printing out the cube files by setting 
 `WRITE_CUBE .FALSE.`. This will print out the energy levels for each step in the log file. If you have set the `&DIAGONALIZATION` to  `ON`, the energies will be printed 
 instantly because it has already computed the energies through diagonalization. If you want to use the `OT` (orbital transformation) method, it will take a bit longer to print 
-out the energies. After the energies were printed in the log files, you can plot them using Libra. In order to do so, you will need to run the following command in Python (it is recommended to use the Jupyter notebook):
+out the energies. After the energies were printed in the log file, you can plot them using Libra. In order to do so, you will need to run the following command in Python (it is recommended to use the Jupyter notebook):
 ```
 import numpy as np
 import matplotlib.pyplot as plt
@@ -66,5 +66,17 @@ plt.title("(BA)$_2$PbI$_4$ energy levels vs time")
 plt.savefig('BA2PbI4_energy_levels_vs_time.png', dpi=300)
 plt.close()
 ```
-With this method, you can always check the energy levels vs time live as the MD goes.
+With this method, you can always check the energy levels vs time live as the MD goes. You can also check the average of the gap between two states over the MD. For this, you can 
+add another cell in Jupyter in which you have the following python code:
+```
+# The HOMO-LUMO gap
+istate = homo_index
+fstate = homo_index+1
+energy_gap = []
+for time in range(params["init_time"],params["final_time"]):
+    energy_gap.append(energies[time-params["init_time"]][fstate-min_band] - energies[time-params["init_time"]][istate-min_band])
+energy_gap = np.array(energy_gap) * 27.211385
+print('The average energy gap between state %d and %d is:'%(istate,fstate), np.mean(energy_gap), 'eV')
+```
+
 
