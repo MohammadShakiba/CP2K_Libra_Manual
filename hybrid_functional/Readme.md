@@ -110,7 +110,7 @@ By setting the `&MO_CUBES` and printing out only the energies by `WRITE_CUBE .FA
 
 In this table you can see the timings needed for running the hybrid functional calculations with and without using the PBE converged `wfn` file.
 
-|   | Elapsed time (s) | 
+|  Functional | Elapsed time (s) | 
 |---|---|
 |PBE|      |
 |HSE06 with PBE `wfn` file|      |
@@ -142,5 +142,11 @@ We have also added this part to the input although it is not needed since from n
   XC_DERIV SPLINE2_SMOOTH
 &END XC_GRID
 ```
-The timing 
+The timings for the TD-DFT calculations for the B3LYP are shown in the table below.
+|Number of states | Time for each TD-DFT cycle (s) |Total elapsed time (s)|
+|---|---|---|
+|20   |   |   |
+| 40  |   |   |
+|  60 |   |   |
+
 
