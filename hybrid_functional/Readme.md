@@ -41,7 +41,7 @@ In hybrid functional calculations, we need to add this part for HSE06 for the `&
     !  MAX_MEMORY  10000
     !  EPS_STORAGE_SCALING 0.1
     !&END MEMORY
-    FRACTION 0.3
+    FRACTION 0.25
   &END HF
 &END XC
 ```
