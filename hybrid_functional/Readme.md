@@ -106,5 +106,7 @@ In the `&KIND` section we need to add `BLYP` potentials from `GTH_POTENTIALS`. H
   POTENTIAL GTH-BLYP-q4
 &END KIND
 ```
+By setting the `&MO_CUBES` and printing out only the energies by `WRITE_CUBE .FALSE.`, you can see that the energy gaps have increased compared to PBE functional calculations.
+
 Note that for TD-DFT with hybrid functionals we need to use the CP2K v7 or higher. In lower versions, there is a known problem with convergence of the TD-DFT calculations
 with ADMM which seems to be fixed in v7.
