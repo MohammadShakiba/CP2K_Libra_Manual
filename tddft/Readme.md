@@ -26,9 +26,9 @@ this part to the `&XC` section. For higher versions this isn't required.
 ```
 The results of the TD-DFT calculations for different number of excited states (`NSTATES`) is shown in the following table.
 
-| NGRIDS  | #Excited states  | #Processors  | Each TD-DFT cycle  |Total TD-DFT time   |
-|---|---|---|---|---|
-|16   |20   |25   |   |   |
-|16   |40   |25   |   |   |
-|16   |60   |25   |   |   |
+| NGRIDS  | #Excited states  | #Processors  | Each TD-DFT cycle (s) |Total TD-DFT time (s)   | Maximum excitation energy above band gap (eV)
+|---|---|---|---|---|---|
+|16   |20   |25   |   |   |   |
+|16   |40   |25   |   |   |   |
+|16   |60   |25   |   |   |   |
 
