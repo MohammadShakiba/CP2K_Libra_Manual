@@ -108,5 +108,39 @@ In the `&KIND` section we need to add `BLYP` potentials from `GTH_POTENTIALS`. H
 ```
 By setting the `&MO_CUBES` and printing out only the energies by `WRITE_CUBE .FALSE.`, you can see that the energy gaps have increased compared to PBE functional calculations.
 
+In this table you can see the timings needed for running the hybrid functional calculations with and without using the PBE converged `wfn` file.
+
+|   | Elapsed time (s) | 
+|---|---|
+|PBE|      |
+|HSE06 with PBE `wfn` file|      |
+|B3LYP with PBE `wfn` file|      |
+|HSE06 without PBE `wfn` file|      |
+|B3LYP without PBE `wfn` file|      |
+
 Note that for TD-DFT with hybrid functionals we need to use the CP2K v7 or higher. In lower versions, there is a known problem with convergence of the TD-DFT calculations
-with ADMM which seems to be fixed in v7.
+with ADMM which seems to be fixed in v7. The same as before it is needed to add this section for TD-DFT calculations:
+```
+&PROPERTIES
+  &TDDFPT
+     NSTATES     20            # number of excited states
+     MAX_ITER    200           # maximum number of Davidson iterations
+     CONVERGENCE [eV] 1.0e-5   # convergence on maximum energy change between iterations
+     &MGRID
+        NGRIDS 16
+        CUTOFF 500 # separate cutoff for TDDFPT calc
+     &END
+     ! Only in case you have a tdwfn file from previous calculations
+     !RESTART     .TRUE.
+     !WFN_RESTART_FILE_NAME RESTART.tdwfn
+  &END TDDFPT
+&END PROPERTIES
+```
+We have also added this part to the input although it is not needed since from now on for TD-DFT calculations with hybrid functionals we use the CP2K v7.1.
+```
+&XC_GRID
+  XC_DERIV SPLINE2_SMOOTH
+&END XC_GRID
+```
+The timing 
+
