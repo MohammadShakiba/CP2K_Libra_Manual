@@ -66,5 +66,5 @@ plt.title("(BA)$_2$PbI$_4$ energy levels vs time")
 plt.savefig('BA2PbI4_energy_levels_vs_time.png', dpi=300)
 plt.close()
 ```
-With this method, you can always check the energies vs time live as the MD goes.
+With this method, you can always check the energy levels vs time live as the MD goes.
 
