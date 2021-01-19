@@ -10,7 +10,7 @@ guess for the `hse06.inp` and `b3lyp.inp` using the `SCF_GUESS RESTART` and `WFN
 For HSE06 caclulations we have adopted an input from [here](https://www.cp2k.org/_media/events:2018_summer_school:cp2k-uk-stfc-june-2018-sanliang-ling.pdf). We can use the
 PBE potentials for HSE06 but for B3LYP, we need to use the BLYP potentials. The BLYP potentials are available for different atoms in [`GTH_POTENTIALS`](https://github.com/mkrack/cp2k-data/blob/master/potentials/Goedecker/cp2k/GTH_POTENTIALS) file.
 
-In hybrid functional calculations, we need to add this part for HSE06 for the `&XC` section:
+In hybrid functional calculations, we need to add this part for HSE06 for the `&XC` section (the `&VDW_POTENTIAL` part is added in the input):
 ```
 &XC
   &XC_FUNCTIONAL
@@ -74,7 +74,7 @@ and is defined with `AUX_FIT` after `BASIS_SET`. Here is an example for Pb atom:
   POTENTIAL GTH-PBE-q4
 &END KIND
 ```
-For B3LYP, we need to use `LIBXC` [library functionals](https://www.tddft.org/programs/libxc/functionals/previous/libxc-5.0.0/) which is `XC_HYB_GGA_XC_B3LYP`. You can also use other B3LYP functionals such as `HYB_GGA_XC_CAM_B3LYP` which is CAM-B3LYP. Here is the `&XC` section for B3LYP:
+For B3LYP, we need to use `LIBXC` [library functionals](https://www.tddft.org/programs/libxc/functionals/previous/libxc-5.0.0/) which is `XC_HYB_GGA_XC_B3LYP`. You can also use other B3LYP functionals such as `HYB_GGA_XC_CAM_B3LYP` which is CAM-B3LYP. Here is the `&XC` section for B3LYP (the `&VDW_POTENTIAL` part is added in the input):
 ```
 &XC
   &XC_FUNCTIONAL
