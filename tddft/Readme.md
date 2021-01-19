@@ -11,7 +11,24 @@ In order to perform TD-DFT calculations in CP2K, you need to the following the `
         NGRIDS 16
         CUTOFF 500 # separate cutoff for TDDFPT calc
      &END
+     ! Only in case you have a tdwfn file from previous calculations
+     !RESTART     .TRUE.
+     !WFN_RESTART_FILE_NAME RESTART.tdwfn
   &END TDDFPT
 &END PROPERTIES
 ```
-The `NGRIDS` and cutoff are chosen the same as in the SCF calculations although you can run another convergence analysis for that too. 
+The `NGRIDS` and cutoff are chosen the same as in the SCF calculations although you can run another convergence analysis for that too. One can also use the `RESTART` fo TD-DFT calculations. To this end you will need to add the `.tdwfn` file from previous calculations in front of `WFN_RESTART_FILE_NAME`. In CP2K v6.1 one also needs to add
+this part to the `&XC` section. For higher versions this isn't required.
+```
+&XC_GRID
+  XC_DERIV SPLINE2_SMOOTH
+&END XC_GRID
+```
+The results of the TD-DFT calculations for different number of excited states (`NSTATES`) is shown in the following table.
+
+| NGRIDS  | #Excited states  | #Processors  | Each TD-DFT cycle  |Total TD-DFT time   |
+|---|---|---|---|---|
+|16   |20   |25   |   |   |
+|16   |40   |25   |   |   |
+|16   |60   |25   |   |   |
+
