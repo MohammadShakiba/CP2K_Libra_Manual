@@ -85,7 +85,7 @@
     &END CELL
 
     &TOPOLOGY
-      COORD_FILE_NAME unit_cell.xyz
+      COORD_FILE_NAME optimized_unit_cell.xyz
       COORD_FILE_FORMAT XYZ
       ! Only in case you use cif file
       !&GENERATE
