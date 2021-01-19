@@ -65,4 +65,15 @@ BASIS_SET_FILE_NAME BASIS_ADMM
 BASIS_SET_FILE_NAME BASIS_ADMM_MOLOPT
 POTENTIAL_FILE_NAME GTH_POTENTIALS
 ```
+For each atom type, two basis set should be added for hybrid functional calculations. The first one is the usual basis set and the second one is the auxiliary basis set
+and is defined with `AUX_FIT` after `BASIS_SET`. Here is an example for Pb atom:
+```
+&KIND Pb
+  BASIS_SET DZVP-MOLOPT-SR-GTH 
+  BASIS_SET AUX_FIT cFIT6
+  POTENTIAL GTH-PBE-q4
+&END KIND
+```
+
+
 
