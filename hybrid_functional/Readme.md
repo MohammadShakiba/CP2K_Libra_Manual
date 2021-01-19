@@ -108,7 +108,7 @@ In the `&KIND` section we need to add `BLYP` potentials from `GTH_POTENTIALS`. H
 ```
 By setting the `&MO_CUBES` and printing out only the energies by `WRITE_CUBE .FALSE.`, you can see that the energy gaps have increased compared to PBE functional calculations.
 
-In this table you can see the timings needed for running the hybrid functional calculations with and without using the PBE converged `wfn` file.
+In this table you can see the timings needed for running the hybrid functional calculations with and without using the PBE converged `wfn` file. Here we used 25 processors.
 
 |  Functional | Elapsed time (s) | 
 |---|---|
@@ -142,7 +142,7 @@ We have also added this part to the input although it is not needed since from n
   XC_DERIV SPLINE2_SMOOTH
 &END XC_GRID
 ```
-The timings for the TD-DFT calculations for the B3LYP are shown in the table below.
+The timings for the TD-DFT calculations for the B3LYP are shown in the table below. Here we used 25 processors.
 |Number of states | Time for each TD-DFT cycle (s) |Total elapsed time (s)|
 |---|---|---|
 |20   |   |   |
