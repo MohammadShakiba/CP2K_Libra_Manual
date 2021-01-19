@@ -68,6 +68,19 @@
         !&END MEMORY
         FRACTION 0.25
       &END HF
+      ! In CP2K versions lower than v7, this part is required for TDDFT calculations
+      &XC_GRID
+        XC_DERIV SPLINE2_SMOOTH
+      &END XC_GRID
+      &VDW_POTENTIAL
+         POTENTIAL_TYPE PAIR_POTENTIAL 
+         &PAIR_POTENTIAL
+            PARAMETER_FILE_NAME dftd3.dat
+            TYPE DFTD3
+            REFERENCE_FUNCTIONAL PBE
+            R_CUTOFF [angstrom] 16
+         &END
+      &END VDW_POTENTIAL
     &END XC
     &AUXILIARY_DENSITY_MATRIX_METHOD
       METHOD BASIS_PROJECTION
