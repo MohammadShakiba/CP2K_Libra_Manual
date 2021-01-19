@@ -58,7 +58,6 @@
             PARAMETER_FILE_NAME dftd3.dat
             TYPE DFTD3
             REFERENCE_FUNCTIONAL PBE
-            R_CUTOFF [angstrom] 16
          &END
       &END VDW_POTENTIAL
     &END XC
