@@ -1,7 +1,7 @@
 # Hybrid functionals with CP2K
 
 CP2K can perform hybrid functional calculations with a relatively good speed. You need to install CP2K with `LBINT` and `LIBXC` packages to be able to perform hybrid functional 
-calculations. To access a library of exchange-correlation functionals you can use [LIBXC](https://www.tddft.org/programs/libxc/functionals). For different versions of CP2K one
+calculations. To access a library of exchange-correlation functionals you can use [LIBXC](https://www.tddft.org/programs/libxc/functionals/previous/libxc-5.0.0/). For different versions of CP2K one
 needs a specific version of `LIBXC` or `LIBINT`. So, it is recommended to use the `./install_tool_chain.sh` to compile CP2K or look for the correct version of these libraries and compile them manually and then use them in compilation of CP2K (for more information take a look over [this link](https://xconfigure.readthedocs.io/en/latest/cp2k/)). 
 The key to do the hybrid functional calculation speed is the initial guess for the SCF cycle. 
 In order to do so, we need to first obtain an initial converged PBE `wfn` file and then use the PBE `wfn` file for the initial SCF guess of the hybrid functional. Here, we have
@@ -74,7 +74,7 @@ and is defined with `AUX_FIT` after `BASIS_SET`. Here is an example for Pb atom:
   POTENTIAL GTH-PBE-q4
 &END KIND
 ```
-For B3LYP, we need to use `LIBXC` library functionals which is `XC_HYB_GGA_XC_B3LYP`. Here is the `&XC` section for B3LYP:
+For B3LYP, we need to use `LIBXC` [library functionals](https://www.tddft.org/programs/libxc/functionals/previous/libxc-5.0.0/) which is `XC_HYB_GGA_XC_B3LYP`. You can also use other B3LYP functionals such as `HYB_GGA_XC_CAM_B3LYP` which is CAM-B3LYP. Here is the `&XC` section for B3LYP:
 ```
 &XC
   &XC_FUNCTIONAL
