@@ -25,6 +25,8 @@ It is highly recommended to plot the energy levels vs time as well. In order to 
 instantly because it has already computed the energies through diagonalization. If you want to use the `OT` (orbital transformation) method, it will take a bit longer to print 
 out the energies. After the energies were printed in the log files, you can plot them using Libra. In order to do so, you will need to run the following command in Python (it is recommended to use the Jupyter notebook):
 ```
+import numpy as np
+import matplotlib.pyplot as plt
 from libra_py.CP2K_methods import read_energies_from_cp2k_md_log_file
 
 params = { }
