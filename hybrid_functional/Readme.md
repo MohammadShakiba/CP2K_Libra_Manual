@@ -56,7 +56,7 @@ For hybrid functionals, CP2K uses Auxiliary Density Matrix Method (ADMM). This n
   ADMM_PURIFICATION_METHOD MO_DIAG
 &END
 ```
-Note that the `MO_DIAG` in `ADMM_PURIFICATION_METHOD` is good and stable for MD. In order to do the TD-DFT calculations you need to set this to `NONE`.
+Note that the `MO_DIAG` in `ADMM_PURIFICATION_METHOD` is good and stable for MD but also note that this method works only for `OT` method. In order to do the TD-DFT calculations you need to set this to `NONE`.
 In the `&DFT` section, this part should also be added. The files `BASIS_ADMM` or `BASIS_ADMM_MOLOPT` include the auxiliary basis set for each atom type.
 There is no problem to add multiple `BASIS_SET_FILE_NAME` to the input and the CP2K will concatenate them but one should not add multiple keywords in CP2K like `POTENTIAL_FILE_NAME`.
 ```
