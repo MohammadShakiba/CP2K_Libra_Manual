@@ -29,6 +29,8 @@ export PATH=/full/path/to/cp2k/executable:$PATH
 ln -s /full/path/to/cp2k/executable 
 ```
 
+At first, it is noted that CP2K is run using the `mpirun` command. For example if one needs to run the `psmp` version of CP2K with 25 number of processors for `input.inp` and output it in `output.log`, it is needed
+to run the command `mpirun -np 25 cp2k.psmp -i input.inp -o output.log`. This is the case for all types of calculations such as geometry optimization or molecular dynamics.
 Now, you can run the bash file using `./conv_anal.sh`. After running the bash file the initial guesses for each cutoff value will be printe out. The results of the convergence analysis for the (BA)2PbI4 are shown.
 
 |Cutoff (Ry)	| Energy | Difference |
