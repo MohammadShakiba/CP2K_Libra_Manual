@@ -146,7 +146,7 @@ The timings for the TD-DFT calculations for the B3LYP are shown in the table bel
 | #Excited states | Time for each TD-DFT cycle (s) |Total elapsed time (s)| Maximum excitation energy (eV) |
 |---|---|---|---|
 |20   | 363  |  6183 | 0.82 |
-| 40  |   |   |   |
+| 40  |  720 |  8639 | 0.98  |
 
 The results of the TD-DFT calculations with PBE functional was shown in the [tddft] section. The band gaps for different functionals are shown in the following table. Note that with hybrid functionals the states energy gaps are higher than the pure functional. The maximum excitation energy with 20 states is 0.82 eV while for PBE functional it was 0.48 eV. So, dependent on the experiments, we can see that we can adopt even lower number of states for this functional.
 
