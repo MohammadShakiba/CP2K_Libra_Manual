@@ -29,6 +29,20 @@ export PATH=/full/path/to/cp2k/executable:$PATH
 ln -s /full/path/to/cp2k/executable 
 ```
 
+**Note:** Please note that you need to load the dependencies before loading CP2K. This is done either by `module load`, `export PATH=/full/path/to/dependencies/setup:$PATH`, or by `source` command. Here are some examples that you need to add depending on your operating system.
+
+```
+module load intel-mpi-9
+```
+```
+module load openmpi/3.0.3/gcc-7.3.0
+```
+Here is an example if you have used `./install_tool_chain.sh` to install CP2K.
+```
+source /full/path/to/cp2k/tools/toolchain/install/setup
+```
+In order to check that the dependencies are loaded successfully you can test `mpirun --version` or `mpif90 --version`.
+
 At first, it is noted that CP2K is run using the `mpirun` command. For example if one needs to run the `psmp` version of CP2K with 25 number of processors for `input.inp` and output it in `output.log`, it is needed
 to run the command `mpirun -np 25 cp2k.psmp -i input.inp -o output.log`. This is the case for all types of calculations such as geometry optimization or molecular dynamics.
 Now, you can run the bash file using `./conv_anal.sh`. After running the bash file the initial guesses for each cutoff value will be printe out. The results of the convergence analysis for the (BA)2PbI4 are shown.
