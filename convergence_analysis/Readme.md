@@ -75,3 +75,5 @@ You can see that the choice of `NGRIDS 6` can be a good choice. Also, one can te
 Another point for different types of calculations in CP2K is that if you set different atom types in `&KIND` sections that are not in the coordinates, which is the case in here, CP2K will ignore them
 and will just use the ones that are available in the coordinates. Also, if the `SCF_GUESS` is set to `RESTART` and there is no `wfn` file available, CP2K will default to 
 `ATOMIC` guess.
+
+**Note:** When running `./conv_anal.sh`, the `sed` command might cause some problem and add two `CUTOFF` in the `MGRID` section. This will give error and CP2K will crash (it needs to be a Pythonic way with for flexibility). This might happen only at the first time you use this bash file. If you remove the extra `CUTOFF` after running the bash file from `energy.inp` and run `./conv_anal.sh` again, this problem will be solved and there would be no such errors.
