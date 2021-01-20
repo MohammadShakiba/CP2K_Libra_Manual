@@ -143,7 +143,7 @@ We have also added this part to the input although it is not needed since from n
 &END XC_GRID
 ```
 The timings for the TD-DFT calculations for the B3LYP are shown in the table below. Here we used 25 processors (CP2K v7.1).
-|Number of states | Time for each TD-DFT cycle (s) |Total elapsed time (s)| Maximum excitation energy (eV) |
+| #Excited states | Time for each TD-DFT cycle (s) |Total elapsed time (s)| Maximum excitation energy (eV) |
 |---|---|---|---|
 |20   | 363  |  6183 | 0.82 |
 | 40  |   |   |   |
