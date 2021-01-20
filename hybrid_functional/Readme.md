@@ -112,9 +112,9 @@ In this table you can see the timings needed for running the hybrid functional c
 
 |  Functional | Elapsed time (s) | 
 |---|---|
-|PBE|      |
-|HSE06 with PBE `wfn` file|      |
-|B3LYP with PBE `wfn` file|      |
+|PBE|  171.1    |
+|HSE06 with PBE `wfn` file|   387.5 (Initial step: 139.4, 16 steps with 15.5)   |
+|B3LYP with PBE `wfn` file|  359.3 (Initial step: 57, 16 steps with 18.9)    |
 |HSE06 without PBE `wfn` file|      |
 |B3LYP without PBE `wfn` file|      |
 
