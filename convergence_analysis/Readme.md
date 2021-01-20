@@ -41,7 +41,7 @@ Here is an example if you have used `./install_tool_chain.sh` to install CP2K.
 ```
 source /full/path/to/cp2k/tools/toolchain/install/setup
 ```
-In order to check that the dependencies are loaded successfully you can test `mpirun --version` or `mpif90 --version`.
+In order to check that the dependencies are loaded successfully you can test `mpirun --version` or `mpif90 --version`. If the version is the same as the one installed, then it is loaded successfully. Another way is to check the `echo $PATH` or just `$PATH` and check whether the `$PATH` variable contains the path to dependencies.
 
 At first, it is noted that CP2K is run using the `mpirun` command. For example if one needs to run the `psmp` version of CP2K with 25 number of processors for `input.inp` and output it in `output.log`, it is needed
 to run the command `mpirun -np 25 cp2k.psmp -i input.inp -o output.log`. This is the case for all types of calculations such as geometry optimization or molecular dynamics.
