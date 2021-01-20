@@ -108,15 +108,15 @@ In the `&KIND` section we need to add `BLYP` potentials from `GTH_POTENTIALS`. H
 ```
 By setting the `&MO_CUBES` and printing out only the energies by `WRITE_CUBE .FALSE.`, you can see that the energy gaps have increased compared to PBE functional calculations.
 
-In this table you can see the timings needed for running the hybrid functional calculations with and without using the PBE converged `wfn` file. Here we used 25 processors (CP2K v7.1).
+In this table you can see the timings needed for running the hybrid functional calculations with and without using the PBE converged `wfn` file. Here we used 25 processors (CP2K v7.1). Although the timing is not so much different but this will show itself for larger systems or some other systems which PBE convergence is easier and the hybrid functional will be converged in a couple of steps. Overall, it can be used as an alternative for the convergence of hybrid functionals.
 
 |  Functional | Elapsed time (s) | 
 |---|---|
 |PBE|  171.1    |
-|HSE06 with PBE `wfn` file|   387.5 (Initial step: 139.4, 16 steps with 15.5)   |
-|B3LYP with PBE `wfn` file|  359.3 (Initial step: 57, 16 steps with 18.9)    |
-|HSE06 without PBE `wfn` file|      |
-|B3LYP without PBE `wfn` file|      |
+|HSE06 with PBE `wfn` file   |   387.5 (Initial step: 139.4, 16 steps with 15.5)   |
+|B3LYP with PBE `wfn` file   |  359.3 (Initial step: 57, 16 steps with 18.9)       |
+|HSE06 without PBE `wfn` file|   408.2 (Initial step: 138.1, 26 steps with 15.7)    |
+|B3LYP without PBE `wfn` file|   532 (Initial step: 56.9, 28 steps with 19)   |
 
 Note that for TD-DFT with hybrid functionals we need to use the CP2K v7 or higher. In lower versions, there is a known problem with convergence of the TD-DFT calculations
 with ADMM which seems to be fixed in v7. The same as before it is needed to add this section for TD-DFT calculations:
